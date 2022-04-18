@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% load static %}
+
+{% block body_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/dash.css' %}">
+<h1>Dashboard</h1>
+{% for msg in messages %}
+  <div class="alert alert-success" role="alert">
+     <h3 align='center'>{{msg}}</h3>  
+    </div>
+    {% endfor %}
+<p><a href="/retrive">Edit Your Infromations</a></p>
+
+ {% endblock %}

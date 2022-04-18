@@ -1,0 +1,15 @@
+body{
+    font-family: 'Bebas Neue', cursive;
+font-family: 'Noto Serif', serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Rowdies', cursive;
+font-family: 'Source Serif 4', serif;
+/* font-family: 'Supermercado One', cursive; */
+ 
+}
+
+
+.name{
+  margin-right: 20px;
+  color: white;
+}

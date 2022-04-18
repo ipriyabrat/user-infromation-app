@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% load static %}
+
+{% block body_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/logout.css' %}">
+<div class="jumbotron">
+    <div class="container">
+      <h1>Thanks for using...</h1>
+      <p>Anyway we are feeling very sad Because you logout, atleast 24 hours per day you have to use our application</p>
+      <h2>Please login again to enjoy....</h2>
+      <a href="/accounts/login" class='btn btn-success'>Login</a>
+    </div>
+  </div>
+
+
+{% endblock %}

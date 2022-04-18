@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html'%}
+{% load static %}
+{% block body_block%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+
+<div class="col-lg-5 shadow  mx-auto p-0 m-3">
+     <div class="container" >
+        <h2 class="alert alert-success">Please signup to Use APP</h2>
+        <form method="post" >
+          {{form.as_p}}
+          {% csrf_token%}
+          <div class="text-center" >
+            <input type="submit" value="signup" class="btn btn-warning">
+            
+            </div> 
+             
+        </form>
+     </div> 
+    </div>
+{% endblock%}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% load static %}
+
+
+{% block body_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+<div class="jumbotron">
+    <h1 class="display-4">Hello,Welcome To Here</h1>
+    {% comment %} <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> {% endcomment %}
+    <hr class="my-4">
+    <p>store your information securely</p>
+    <a class="btn btn-warning btn-lg" href="/dashbord" role="button">DashBord</a>
+  </div>
+{% endblock  %}

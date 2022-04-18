@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% load static %}
+
+{% block body_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/retrive.css' %}">
+
+{% if user_info %}
+<div class="alert alert-danger" role="alert">
+  <h1>USER INFROMATIONS </h1>  
+  </div>
+{% for msg in messages %}
+  <div class="alert alert-success" role="alert">
+     <h3>{{msg}}</h3>  
+    </div>
+    {% endfor %}
+  
+
+ 
+      <!-- 'name','address','mobileno','email','blood_group' -->
+
+      <!-- 'Identity_card_number','driving_licence_no','bank_ac_no','creditcard_no','atmcard_no' -->
+      <div class="container">
+    <div class="col-sm-10 shadow p-5 offset-sm-1"> 
+    {% for user in user_info %}
+    <h1 id="color">MEMORANDA</h1>
+    <p>NAME:{{user.name}}</p>
+    <p>ADDRESS:{{user.address}}</p>
+    <p>MOBILE NUMBER:{{user.mobileno}}</p>
+    <p>EMAIL ID:{{user.email}}</p>
+    <p>BLOOD GROUP:{{user.blood_group}}</p>
+    <p>IDENTITY NUMBER:{{user.Identity_card_number}}</p>
+    <p>DRIVING LICENCE NUMBER:{{user.driving_licence_no}}</p>
+    <h1 id="color">FINACIAL</h1>
+    <p>BANK ACCOUNT NUMBER:{{user.bank_ac_no}}</p>
+    <p>CREDIT CARD NUMBER:{{user.creditcard_no}}</p>
+    <p>ATM CARD NUMBER:{{user.atmcard_no}}</p>
+    
+     
+ {% endfor %}
+      </div>
+
+  {% else %}
+    <div class="alert alert-warning" role="alert">
+        <h2>NO DATA FOUND</h2>
+      </div>
+    </div>
+
+    
+    {% endif %}
+ 
+    <div class="text-center" id="btn">
+      <a href="/insert" class="btn btn-primary">INSERT DATA</a>&nbsp &nbsp
+      {% for user in user_info %}
+        <a href="/update/{{user.id}}" class="btn btn-primary">Update</a>&nbsp&nbsp <a href='/delete/{{user.id}}' class='btn btn-primary'>Delete</a> 
+        
+ {% endfor %}
+      </div> 
+
+
+{% endblock %}
